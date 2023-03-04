@@ -39,7 +39,14 @@ function setDataFromStorage() {
 
     if (savedValue) {
         const savedValueObj = JSON.parse(savedValue);
-        if (savedValueObj.email) emailData.value = savedValueObj.email;
-        if (savedValueObj.message) messageData.value = savedValueObj.message;
+        
+        if (savedValueObj.email) {
+            emailData.value = savedValueObj.email;
+            formData['email'] = savedValueObj.email;
+        } 
+        if (savedValueObj.message) {
+            messageData.value = savedValueObj.message;
+            formData['message'] = savedValueObj.message;
+        }
     }
 }
