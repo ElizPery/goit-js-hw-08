@@ -25,7 +25,7 @@ function onInputChange(e) {
 function onFormSubmit(e) {
     e.preventDefault();
     if (emailData.value === '' || messageData.value === '') {
-        alert('Fill all!');
+       return alert('Fill all!');
     }
 
     e.currentTarget.reset();
@@ -42,11 +42,11 @@ function setDataFromStorage() {
         
         if (savedValueObj.email) {
             emailData.value = savedValueObj.email;
-            formData['email'] = savedValueObj.email;
+            formData.email = savedValueObj.email;
         } 
         if (savedValueObj.message) {
             messageData.value = savedValueObj.message;
-            formData['message'] = savedValueObj.message;
+            formData.message = savedValueObj.message;
         }
     }
 }
